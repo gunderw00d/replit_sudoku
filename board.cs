@@ -11,7 +11,7 @@ internal class Board
     const int squareLength = 9;
     const int numSquares = 9;
 
-    public Board()
+    public Board(bool testConfig)
     {
       theBoard = new int[colCount, rowCount];
 
@@ -22,7 +22,12 @@ internal class Board
         for (int j = 0; j < colCount; j++)
         {
           // row[i] column[j] = value
-          theBoard[i, j] = (i * colCount) + j;
+          if (testConfig) {
+            theBoard[i, j] = (i * colCount) + j;  
+          }
+          else {
+            theBoard[i, j] = 0;
+          }
         }
       }
     }

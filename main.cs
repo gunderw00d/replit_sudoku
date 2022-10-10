@@ -4,7 +4,7 @@ internal class Program {
 
   public static void testBoard() {
     
-    Board bb = new Board();
+    Board bb = new Board(true);
     bb.printBoard();
 
     Console.WriteLine();
