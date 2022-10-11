@@ -49,8 +49,29 @@ internal class Program {
     bb.printColumn(7);
     bb.printColumn(8);
   }
+
+  public static void testBoardReadFile() {
+    bool useTestMode = false;
+    Board bb = new Board(useTestMode);
+
+    bb.ReadFile("Boards/board1_start.txt");
+    bb.printBoard();
+
+    Console.WriteLine();
+    bb.ReadFile("Boards/evil1_start.txt");
+    bb.printBoard();
+  }
+
+  public static bool IsBoardSolved(Board theBoard) {
+    bool retValue = false;
+
+    // TODO - write this function
+
+    return retValue;
+  }
   
   public static void Main (string[] args) {
-    testBoard();
+    //testBoard();
+    //testBoardReadFile();
   }
 }

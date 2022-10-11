@@ -1,8 +1,8 @@
 using System;
+using System.IO;
 
 internal class Board
 {
-
     // the sudoku board - Row Major
     private int[,] theBoard;
 
@@ -32,6 +32,23 @@ internal class Board
       }
     }
 
+    public bool ReadFile(string fileName) {
+      // open the file
+      // read 9 lines with 9 ints, separated by spaces
+      string[] lines = System.IO.File.ReadAllLines(fileName);
+      for (int i = 0; i < lines.Length; i++) {
+        //Console.WriteLine(lines[i]);
+        string[] subs = lines[i].Split(' ');
+        for (int j = 0; j < subs.Length; j++) {
+          //Console.WriteLine(subs[j]);
+          int v = Int32.Parse(subs[j]);
+          theBoard[i, j] = v;
+        }
+      }
+      
+      return true;
+    }
+  
     // Some debug prints
     public void printBoard() {
       Console.WriteLine("--- The Board ---");
