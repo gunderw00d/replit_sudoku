@@ -32,7 +32,7 @@ internal class Board
       }
     }
 
-    public bool ReadFile(string fileName) {
+    public bool readFile(string fileName) {
       // open the file
       // read 9 lines with 9 ints, separated by spaces
       string[] lines = System.IO.File.ReadAllLines(fileName);

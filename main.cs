@@ -54,11 +54,11 @@ internal class Program {
     bool useTestMode = false;
     Board bb = new Board(useTestMode);
 
-    bb.ReadFile("Boards/board1_start.txt");
+    bb.readFile("Boards/board1_start.txt");
     bb.printBoard();
 
     Console.WriteLine();
-    bb.ReadFile("Boards/evil1_start.txt");
+    bb.readFile("Boards/evil1_start.txt");
     bb.printBoard();
   }
 
@@ -73,5 +73,18 @@ internal class Program {
   public static void Main (string[] args) {
     //testBoard();
     //testBoardReadFile();
+
+    Board theBoard = new Board(/*testMode=*/false);
+    theBoard.readFile("Boards/board1_solved.txt");
+
+    theBoard.printBoard();
+
+    bool isSolved = IsBoardSolved(theBoard);
+
+    if (isSolved == true) {
+      Console.WriteLine("The Board is Solved!");
+    } else {
+      Console.WriteLine("The Board is NOT solved!");
+    }
   }
 }
